@@ -33,16 +33,18 @@ export const GifGrid = ({ category }) => {
   };
 
   return (
-    <div>
+    <>
       <h3>{category}</h3>
-      {/* Por cada imagen en el estado, se crea un componente: */}
-      {images.map((img) => {
-        //Se podrían enviar cada una de las propiedades con un spread:
-        //Esto permite que no mandemos la img enter.
-        //Tampoco que tengamos que mandar cada propiedad por separado.
-        //O sea, title= img.title, url = img.url, etc:
-        return <GifGridItem key={img.id} {...img} />;
-      })}
-    </div>
+      <div className="card-grid">
+        {/* Por cada imagen en el estado, se crea un componente: */}
+        {images.map((img) => {
+          //Se podrían enviar cada una de las propiedades con un spread:
+          //Esto permite que no mandemos la img enter.
+          //Tampoco que tengamos que mandar cada propiedad por separado.
+          //O sea, title= img.title, url = img.url, etc:
+          return <GifGridItem key={img.id} {...img} />;
+        })}
+      </div>
+    </>
   );
 };
