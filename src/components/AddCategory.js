@@ -13,7 +13,7 @@ export const AddCategory = ({ setCategories }) => {
     //Validacón: Al menos 2 carácteres
     if (inputValue.trim().length > 2) {
       //Se recibe por parámetro los valores de las categorías y se agrega la nueva:
-      setCategories((categories) => [...categories, inputValue]);
+      setCategories((categories) => [inputValue, ...categories]);
       //Se resetea el valor ingresado:
       setInputValue("");
     }
