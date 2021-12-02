@@ -32,6 +32,6 @@ export const AddCategory = ({ setCategories }) => {
 
 //Parámetros recibidos obligatorios:
 AddCategory.propTypes = {
-  //setCategories tiene que ser una función obligatoria:
+  //setCategories debe ser una función obligatoria:
   setCategories: PropTypes.func.isRequired,
 };
