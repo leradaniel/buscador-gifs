@@ -4,11 +4,12 @@ import { GifGrid } from "./components/GifGrid";
 
 const GifExpertApp = () => {
   //Se crean las categorías con un useState
-  const [categories, setCategories] = useState(["Kimetsu no Yaiba"]);
+  const [categories, setCategories] = useState([]);
 
   return (
     <>
-      <h2>GifExpertApp</h2>
+      <h1>Gif Expert App</h1>
+      <h2>Buscador de Gifs</h2>
       {/* Se manda la referencia de setCategories al componente */}
       <AddCategory setCategories={setCategories} />
       <hr />

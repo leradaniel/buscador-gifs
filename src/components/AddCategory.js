@@ -24,7 +24,7 @@ export const AddCategory = ({ setCategories }) => {
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        placeholder="Ingrese una categoría de al menos 3 letras y oprima ENTER"
+        placeholder="Ingrese su búsqueda"
       />
     </form>
   );
