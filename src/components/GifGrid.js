@@ -7,9 +7,9 @@ export const GifGrid = ({ category }) => {
 
   return (
     <>
-      <h3>{category}</h3>
+      <h3 className={"animate__animated animate__bounceInDown"}>{category}</h3>
       {/* Si se están cargando las imágenes, se muestra un "Loading": */}
-      {loading && <p>Loading</p>}
+      {loading && <p className={"animate__animated animate__flash"}>Loading</p>}
       <div className="card-grid">
         {images.map((img) => {
           //Se podrían enviar cada una de las propiedades con un spread:
