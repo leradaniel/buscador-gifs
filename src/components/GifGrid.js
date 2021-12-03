@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifGridItem } from "./GifGridItem";
-import { getGifs } from "./helpers/getGifs";
 
 export const GifGrid = ({ category }) => {
-  //Estado que va a almacenar la información de las imágenes recibidas:
-  const [images, setimages] = useState([]);
-  //Al poner el arreglo de dependencias vacío, solamente se llama una vez al contenido.
-  //Al poner "category", se llama cada vez que la categoría cambia
-  useEffect(() => {
-    //Se llama al componente getGifs con la categoría, se recibe las imagenes y las setea.
-    getGifs(category).then(setimages);
-  }, [ category ]);
+  //Se llama al hook y se obtiene la data de las imagenes desestructurada:
+  const { data: images, loading } = useFetchGifs(category);
 
   return (
     <>
       <h3>{category}</h3>
+      {/* Si se están cargando las imágenes, se muestra un "Loading": */}
+      {loading && <p>Loading</p>}
       <div className="card-grid">
-        {/* Por cada imagen en el estado, se crea un componente: */}
         {images.map((img) => {
           //Se podrían enviar cada una de las propiedades con un spread:
           //Esto permite que no mandemos la img enter.
